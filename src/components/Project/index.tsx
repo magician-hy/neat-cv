@@ -25,7 +25,15 @@ export default (props: Props) => {
             </div>
             <div className="project-detail">
               <div className="project-detail-title">技术栈</div>
-              <div className="project-detail-content">{project.stack.join(' + ')}</div>
+              <div className="project-detail-stack">
+                {project.stack.map((item, index) => {
+                  return (
+                    <div key={index} className="project-detail-stack-item">
+                      {item}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
             <div className="project-detail">
               <div className="project-detail-title">项目职责</div>
